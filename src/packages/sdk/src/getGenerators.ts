@@ -138,7 +138,7 @@ export async function getGenerators({
   }
 
   const generatorConfigs = overrideGenerators || config.generators
-  console.log({generatorConfigs});
+
   await validateGenerators(generatorConfigs)
 
   const runningGenerators: Generator[] = []
@@ -200,7 +200,7 @@ The generator needs to either define the \`defaultOutput\` path in the manifest 
           schemaPath,
           version: version || enginesVersion, // this version makes no sense anymore and should be ignored
         }
-        console.log({generator: generator});
+
         // we set the options here a bit later after instantiating the Generator,
         // as we need the generator manifest to resolve the `output` dir
         generatorInstance.setOptions(options)
